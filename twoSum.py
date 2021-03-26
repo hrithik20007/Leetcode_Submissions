@@ -1,3 +1,5 @@
+#Return the index positions of two numbers in a list whose sum matches a given target
+
 class Solution(object):
     def twoSum(self, nums, target):
         """
