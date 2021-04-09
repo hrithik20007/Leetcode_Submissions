@@ -46,6 +46,9 @@ class Solution(object):
         else:
             return False
         '''
+
+
+
         '''
         if n==1 or n==7:
             return True 
