@@ -28,7 +28,7 @@ Why? Because-
 Thus, instead of striving to acheive the maximum no. by XOR-ing with k, we XOR with the maximum no. to find the required value of k. (i.e. in our logic example,
 replace b with k and c with maximum no. and then think about it).
 
-Also, notice that the maximum no. is always (2**maximumBit)-1. Thus, we already know what maximum value we will get.
+Also, notice that the maximum no. is always (2**maximumBit)-1. Thus, we already know what maximum value we will get. Actually, c will always be = abs(b-a).
 '''
 class Solution(object):
     def getMaximumXor(self, nums, maximumBit):
