@@ -22,7 +22,8 @@ class Solution(object):
                     l=mid+1
                                     
             else:                       #If not, then the right side is definitely in sorted order
-                if nums[mid+1]<=target<=nums[h]:    #If the target is within the right side's sorted range
+                if nums[mid+1]<=target<=nums[h]:    #If the target is within the right side's sorted range (we check instead mid+1 to h instead
+                                                    #of mid to h as in some cases l and mid may be equal already, so we need to update that.)
                     l=mid+1
                 else:
                     h=mid  
