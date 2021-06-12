@@ -38,7 +38,6 @@ Explanation: Possible partition [1,1],[2,2],[2,2].
 class Solution:
     def hasGroupsSizeX(self, deck: List[int]) -> bool:
         c=Counter(deck)
-        t=-1
         l1,l2,l3=[],[],[]
         for k,v in c.items():
             l1.append(k)
