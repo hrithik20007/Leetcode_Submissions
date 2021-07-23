@@ -20,6 +20,68 @@ Total amount you can rob = 2 + 9 + 1 = 12.
 
 
 
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var rob = function(nums) {
+    var a=0,b=0,t;				//a stores the second maximum no. and b stores the maximum no. uptil any position of the nums array (without adding two consecutive
+    							//numbers)
+    for(i of nums){
+        t=Math.max(i+a,b);
+        a=b;
+        b=t;
+    }
+    return b;
+};
+
+
+
+/*
+//Works but utilises O(n) space.
+
+var rob = function(nums) {
+    if(nums.length==1)
+        return nums[0];
+    if(nums.length==2)
+        return Math.max(nums[0],nums[1]);
+    
+    var r=[],max=[],t,j,i;
+    if(nums[0]>=nums[1]){
+        j=0;
+        max=[nums[1],nums[0]];
+    }
+    else{
+        j=1;
+        max=[nums[0],nums[1]];
+    }
+    
+    for(i=2;i<nums.length;i++){
+        if(j==i-1)
+            nums[i]+=max[max.length-2];
+        if(j!=i-1)
+            nums[i]+=max[max.length-1];
+
+        if(nums[i]>max[max.length-2] && nums[i]<max[max.length-1]){
+            t=max[max.length-1];
+            max.pop();
+            max.push(nums[i]);
+            max.push(t);
+        }
+        else if(nums[i]>=max[max.length-1]){
+            j=i;
+            max.push(nums[i]);
+        }
+    }
+    
+    return max[max.length-1];
+};
+*/
+
+
+
+
+
 /*
 Logic: Every position would contain the optimal sum (i.e. the max sum possible upto that element), but we must ignore the previous element (as consecutive robbing
 is not allowed).  
