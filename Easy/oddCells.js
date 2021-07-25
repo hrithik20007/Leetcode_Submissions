@@ -30,7 +30,7 @@ Explanation: Final matrix = [[2,2],[2,2]]. There are no odd numbers in the final
  */
 var oddCells = function(m, n, indices) {
     var i,j,x,y,j1,j2,l=[],grid=[],c=0;
-    for(i=0;i<m;i++){
+    for(i=0;i<m;i++){						//Initialising the matrix with 0s.
         l=[];
         for(j=0;j<n;j++){
             l.push(0);
@@ -38,7 +38,7 @@ var oddCells = function(m, n, indices) {
         grid.push(l);
     }
 
-    for(i of indices){
+    for(i of indices){						//We iterate over the indices and increase the row and column values by 1.
         x=i[0];
         y=i[1];
         
@@ -48,7 +48,7 @@ var oddCells = function(m, n, indices) {
             grid[x][j2]+=1;
     }
 
-    for(i=0;i<m;i++){
+    for(i=0;i<m;i++){						//Counting the odd values
         for(j=0;j<n;j++){
             if(grid[i][j]%2!=0)
                 c+=1;
