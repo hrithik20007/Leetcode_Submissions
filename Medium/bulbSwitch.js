@@ -25,8 +25,13 @@ Output: 1
 
 
 
-//The nth bulb (start from 1) will be toggle factors count of nth of times. Only nth with odd amount factors will be on at the end. The square numbers will meet the 
-//condition.
+/*
+Logic: At first, all the bulbs are off. Then, we iterate from 1 to n and toggle the i-th bulb. Meaning -
+At first, all bulbs will be switched on since they are multiples of 1, then bulbs which are present at positions which are multiples of 2 are toggled and so on.
+If we see the pattern, only bulbs which have odd number of factors will remain on at the end. For example, 9 has factors - 1,3,9 (3->odd number), while 6 has factors -
+1,2,3,6 (4->even number). We also notice that the numbers which have odd number of factors are perfect squares. Thus, we we will only count the number of perfect 
+squares from 1 till n. Because the bulb will be switched on at those positions only, by the end. 
+*/
 /**
  * @param {number} n
  * @return {number}
