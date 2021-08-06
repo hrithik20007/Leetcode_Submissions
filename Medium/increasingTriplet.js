@@ -21,7 +21,8 @@ Explanation: The triplet (3, 4, 5) is valid because nums[3] == 0 < nums[4] == 4 
 
 
 
-
+//Note that by the end, the i-th value maybe after the j-th value, but it dosen't matter because at the end of the day there was a value less than j and we found a 
+//value more than j.
 /**
  * @param {number[]} nums
  * @return {boolean}
