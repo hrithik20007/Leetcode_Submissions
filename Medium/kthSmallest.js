@@ -31,8 +31,10 @@ var kthSmallest = function(matrix, k) {
     var l=matrix[0][0];
     var h=matrix[matrix.length-1][matrix[0].length-1];
     var mid,c;
-    
-    function count(matrix){
+
+    //For counting the elements<=mid
+    function count(matrix){								//If the last element in a row is smaller than the mid, that means the rest of them are smaller too. Thus
+    													//we add them to the count. If not, then we decrease j until it is and add all the elements before it. 
         var c1=0,i,j;
         for(i=0;i<matrix.length;i++){
             for(j=matrix[0].length-1;j>=0;j--){
