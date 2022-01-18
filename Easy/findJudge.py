@@ -53,3 +53,42 @@ class Solution:
             return r
         else:
             return -1
+
+
+'''
+In C++
+
+
+
+class Solution {
+public:
+    int findJudge(int n, vector<vector<int>>& trust) {
+        vector<vector<int>> list(n+1,vector<int>());
+        map<int,int> mp;
+        
+        for(int i=0;i<trust.size();i++){
+            list[trust[i][1]].push_back(trust[i][0]);
+            mp[trust[i][0]]+=1;
+        }
+        
+        for(int j=1;j<=n;j++){
+            int f=0;
+            if(list[j].size()==n-1){
+                for(int k=0;k<n-1;k++){
+                    if(list[j][k]==j){
+                        f=1;
+                        break;
+                    }
+                }
+                
+                if(f==0 && mp[j]==0)
+                    return j;
+                else
+                    f=0;
+            }
+        }
+        
+        return -1;
+    }
+};
+'''
