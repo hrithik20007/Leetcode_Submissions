@@ -92,14 +92,14 @@ public:
         }
         
         for(i=0;i<n;i++){                                               //To check if a node has 2 indegrees
-            if(ind[edges[i][1]]!= -1){
-                ans1 = edges[i];                                        //edge1 which contributes to more than 1 indegree
-                ans2 = edges[ind[edges[i][1]]];                         //edge2 which contributes to more than 1 indegree
+            if(ind[edges[i][1]]!= -1){                                  //Indegree of this node (edges[i][1]) is 2
+                ans1 = edges[i];                                        //edge1 which contributes to 2 indegree
+                ans2 = edges[ind[edges[i][1]]];                         //edge2 which contributes to 2 indegree
                 return union_set(ans1,ans2,parent,size,edges,true);
             }
             
             ind[edges[i][1]] = i;                                       //The edge no. contributing to the indegree of 
-        }                                                               //edges[i][1].
+        }                                                               //edges[i][1] is i
         
 
         return union_set(ans1,ans2,parent,size,edges,false);            //Every node has 1 or 0 indegree
